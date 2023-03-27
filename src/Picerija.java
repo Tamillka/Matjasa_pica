@@ -4,10 +4,19 @@ import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
+
+
 public class Picerija {
 	static ArrayList<Klients> klienti = new ArrayList<>();
+	static ArrayList<Pica> pici = new ArrayList<>();
 	
 	static Klients konts = new Klients(null, null, null,false);
+	static Pica picas = new Pica(null, null, null, 0.0);
+	
+	static String[] picasVeidi = {"Ananāsu - 6€|8€|12€", "Margarita - 6€|8€|12€", "Amerikāņu - 6€|8€|12€", "Mafija - 6€|8€|12€", "Studentu - 6€|8€|12€"};
+	static String[] picasIzmeri = {"20cm", "30cm", "50cm"};
+	static String[] merces = {"Siera", "Tomātu", "Ķiploku"};
+	static String[]dzerieni = {"Fanta - 1,25€", "Coca-Cola - 1,25€", "Sprite - 1,25€", "Karamēļu ledus Latte - 1,25€", "Melnā kārsta kafija - 1,25€"};
 	
 	public static void izveidotKlientu() {
 		String vards="", talrunis="", adrese="";	
@@ -36,6 +45,17 @@ public class Picerija {
         JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
     }
 }
+	
+	public static void izveidotPicu() {
+		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
+		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
+		 String merce = (String)JOptionPane.showInputDialog(null, "Kāda mērce?", "Mērces", JOptionPane.QUESTION_MESSAGE, null, merces, merces[0]);
+		 
+		 double cena = 0;
+		 Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);
+		 pici.add(picas);
+	}
+	
 	public static void main(String[] args) {
 		String[] darbibas = {"izveidot pasutijumu", "Apskatit sūtījumus", "Aizvert programmu"};	
 		String izvele;
