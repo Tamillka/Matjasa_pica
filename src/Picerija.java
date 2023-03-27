@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
@@ -36,7 +37,23 @@ public class Picerija {
     }
 }
 	public static void main(String[] args) {
-		
+		String[] darbibas = {"izveidot pasutijumu", "Apskatit sūtījumus", "Aizvert programmu"};	
+		String izvele;
+		int izveletaisIndekss;
+		do {
+			izvele = (String)JOptionPane.showInputDialog(null, "Izvelies darbību", "Izvele",
+					JOptionPane.QUESTION_MESSAGE, null, darbibas, darbibas[0]);
+			izveletaisIndekss = Arrays.asList(darbibas).indexOf(izvele);
+			
+			
+			switch(izveletaisIndekss){
+			case 0:
+				izveidotKlientu();
+				
+				break;
+			}
+	}while(izveletaisIndekss !=2);
+
 
 	}
 }
