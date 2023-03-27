@@ -3,7 +3,7 @@ public class Klients {
 		boolean piegade;
 		
 
-		public Klients(String vards, String adrese, String talrunis,boolean piegade) {
+		public Klients(String vards, String adrese, String talrunis, boolean piegade) {
 			this.vards = vards;
 			this.adrese = adrese;
 			this.talrunis = talrunis;
