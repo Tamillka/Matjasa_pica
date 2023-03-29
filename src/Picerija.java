@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class Picerija {
@@ -20,7 +22,7 @@ public class Picerija {
 	public static void izveidotKlientu() {
 		String vards="", talrunis="", adrese="";	
 		boolean piegade = false;
-		int gNr = 0;
+		int gNr=0;
 		int pieg = (JOptionPane.showConfirmDialog(null, "Būs piegāde mājās?", "Piegāde mājās", JOptionPane.YES_NO_OPTION));
 		
 		if (pieg==JOptionPane.YES_OPTION){	
@@ -33,8 +35,11 @@ public class Picerija {
 		    talrunis += "-";
 			adrese += "-";		
 			Random rand = new Random();
-			gNr = rand.nextInt(20)+1;
-			JOptionPane.showMessageDialog(null, "Jūsu galdiņa numurs!\n"+gNr, "Galds", JOptionPane.WARNING_MESSAGE);
+			gNr =(char) rand.nextInt(20)+1;
+			ImageIcon icon = new ImageIcon("src/restaurant-table (2).png");
+			JLabel label = new JLabel("Galdiņa numurs!\n\n\n"+gNr+"\n\n", icon, JLabel.CENTER);
+			JOptionPane.showMessageDialog(null, label, "Galdīņa numurs", JOptionPane.WARNING_MESSAGE);
+			
 		}  		
 		Klients konts = new Klients(vards, adrese, talrunis, piegade, gNr);	
 		klienti.add(konts);
@@ -48,6 +53,7 @@ public class Picerija {
         JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
     }
 }	
+
 	public static void izveidotPicu() {
 		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
 		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
