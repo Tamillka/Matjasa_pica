@@ -57,20 +57,33 @@ public class Picerija {
 	}
 	
 	public static void main(String[] args) {
-		String[] darbibas = {"izveidot pasutijumu", "Apskatit sūtījumus", "Aizvert programmu"};	
-		String izvele;
-		int izveletaisIndekss;
+		String[] darbibas = {"izveidot pasutijumu", "Apskatit sūtījumus", "Aizvert programmu"};
+		String[]darbibas1 = {"Pievienot picu", "Aiziet atpakaļ"};
+		String izvele, izv;
+		int izveletaisIndekss, izIndekss;
 		do {
 			izvele = (String)JOptionPane.showInputDialog(null, "Izvelies darbību", "Izvele",
 					JOptionPane.QUESTION_MESSAGE, null, darbibas, darbibas[0]);
-			izveletaisIndekss = Arrays.asList(darbibas).indexOf(izvele);
-			
-			
+			izveletaisIndekss = Arrays.asList(darbibas).indexOf(izvele);					
 			switch(izveletaisIndekss){
 			case 0:
 				izveidotKlientu();
+				do {
+					izv = (String)JOptionPane.showInputDialog(null, "Izvelies darbību", "Izvele",
+						JOptionPane.QUESTION_MESSAGE, null, darbibas1, darbibas1[0]);
+				izIndekss = Arrays.asList(darbibas1).indexOf(izv);
+				switch(izIndekss) {
+				case 0:
+					izveidotPicu();					
+				}
+				}while(izIndekss!=1);
 				
 				break;
+			case 1:
+				//izvadit();
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(null, "Programma apturēta!");
 			}
 	}while(izveletaisIndekss !=2);
 
