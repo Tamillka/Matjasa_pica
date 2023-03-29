@@ -37,7 +37,7 @@ public class Picerija {
 			Random rand = new Random();
 			gNr =(char) rand.nextInt(20)+1;
 			ImageIcon icon = new ImageIcon("src/restaurant-table (2).png");
-			JLabel label = new JLabel("Galdiņa numurs!\n\n\n"+gNr+"\n\n", icon, JLabel.CENTER);
+			JLabel label = new JLabel("Galdiņa numurs!\n"+gNr, icon, JLabel.CENTER);
 			JOptionPane.showMessageDialog(null, label, "Galdīņa numurs", JOptionPane.WARNING_MESSAGE);
 			
 		}  		

@@ -47,3 +47,11 @@ Piegādes adrese: -
 Vārds: -
 Tālrunis: -
 Piegādes adrese: -
+------------------------------
+Vārds: null
+Tālrunis: null
+Piegādes adrese: null
+------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
