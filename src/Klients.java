@@ -1,13 +1,15 @@
 public class Klients {
 		String vards, adrese,talrunis;
 		boolean piegade;
+		int gNr;
 		
 
-		public Klients(String vards, String adrese, String talrunis, boolean piegade) {
+		public Klients(String vards, String adrese, String talrunis, boolean piegade, int gNr) {
 			this.vards = vards;
 			this.adrese = adrese;
 			this.talrunis = talrunis;
 			this.piegade = piegade;
+			this.gNr = gNr;
 		}
 
 		public String izvadit() {

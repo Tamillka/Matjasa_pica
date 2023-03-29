@@ -3,3 +3,11 @@
 Vārds: tami
 Tālrunis: 3456
 Piegādes adrese: gfd
+------------------------------
+Vārds: Tami
+Tālrunis: 24569
+Piegādes adrese: efbh
+------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -

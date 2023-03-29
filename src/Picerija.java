@@ -1,16 +1,15 @@
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
-
-
 
 public class Picerija {
 	static ArrayList<Klients> klienti = new ArrayList<>();
 	static ArrayList<Pica> pici = new ArrayList<>();
 	
-	static Klients konts = new Klients(null, null, null,false);
+	static Klients konts = new Klients(null, null, null, false, 0);
 	static Pica picas = new Pica(null, null, null, 0.0);
 	
 	static String[] picasVeidi = {"Ananāsu - 6€|8€|12€", "Margarita - 6€|8€|12€", "Amerikāņu - 6€|8€|12€", "Mafija - 6€|8€|12€", "Studentu - 6€|8€|12€"};
@@ -21,6 +20,7 @@ public class Picerija {
 	public static void izveidotKlientu() {
 		String vards="", talrunis="", adrese="";	
 		boolean piegade = false;
+		int gNr = 0;
 		int pieg = (JOptionPane.showConfirmDialog(null, "Būs piegāde mājās?", "Piegāde mājās", JOptionPane.YES_NO_OPTION));
 		
 		if (pieg==JOptionPane.YES_OPTION){	
@@ -31,9 +31,12 @@ public class Picerija {
 		}else if(pieg==JOptionPane.NO_OPTION) {
 		    vards += "-";
 		    talrunis += "-";
-			adrese += "-";			
+			adrese += "-";		
+			Random rand = new Random();
+			gNr = rand.nextInt(20)+1;
+			JOptionPane.showMessageDialog(null, "Jūsu galdiņa numurs!\n"+gNr, "Galds", JOptionPane.WARNING_MESSAGE);
 		}  		
-		Klients konts = new Klients(vards, adrese, talrunis, piegade);	
+		Klients konts = new Klients(vards, adrese, talrunis, piegade, gNr);	
 		klienti.add(konts);
 	
 	try {
@@ -44,8 +47,7 @@ public class Picerija {
     } catch (Exception e) { 
         JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
     }
-}
-	
+}	
 	public static void izveidotPicu() {
 		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
 		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
@@ -55,6 +57,7 @@ public class Picerija {
 		 Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);
 		 pici.add(picas);
 	}
+	
 	
 	public static void main(String[] args) {
 		String[] darbibas = {"izveidot pasutijumu", "Apskatit sūtījumus", "Aizvert programmu"};
