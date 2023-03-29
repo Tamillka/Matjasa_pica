@@ -1,63 +1,138 @@
 
 ------------------------------
-Vārds: -
-Tālrunis: -
-Piegādes adrese: -
-Galda numurs: 12
-Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 7.5
+Vārds: tamila
+Tālrunis: 2345
+Piegādes adrese: dfjvb
+Galda numurs: 0
+Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Coca-Cola Sprite |Cena par picu ar piedevam: 11.95
+Izvēlētais ēdiens: Margarita 30cm ar Siera mērci; kartupēļi fri; Coca-Cola |Cena par picu ar piedevam: 12.85
 ______________
-Pirkuma kopēja summa: 7.5
-Izvēlētais ēdiens: Margarita 30cm ar Siera mērci; kartupēļi fri; Coca-Cola Sprite |Cena par picu ar piedevam: 11.95
-______________
-Pirkuma kopēja summa: 7.5
-______________
-Pirkuma kopēja summa: 19.45
-______________
-Pirkuma kopēja summa: 7.5
-______________
-Pirkuma kopēja summa: 19.45
+Pirkuma kopēja summa: 24.799999999999997
+
 ------------------------------
 Vārds: tami
-Tālrunis: 234567
-Piegādes adrese: sdf
+Tālrunis: 23456
+Piegādes adrese: dfkjl
 Galda numurs: 0
-Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Fanta Coca-Cola Sprite |Cena par picu ar piedevam: 13.2
+Pica: Ananāsu 20cm ar Siera mērci; 
+kartupēļi fri; Fanta Coca-Cola 
+ Cena par picu ar piedevam: 12.1
+Pica: Margarita 50cm ar Tomātu mērci; 
+kartupēļi fri; 
+ Cena par picu ar piedevam: 15.5
 ______________
-Pirkuma kopēja summa: 13.2
-Izvēlētais ēdiens: Ananāsu 30cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 11.5
-______________
-Pirkuma kopēja summa: 24.7
-______________
-Pirkuma kopēja summa: 24.7
-------------------------------
-Vārds: -
-Tālrunis: -
-Piegādes adrese: -
-Galda numurs: 17
-Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Coca-Cola |Cena par picu ar piedevam: 8.85
-______________
-Pirkuma kopēja summa: 8.85
-Izvēlētais ēdiens: Ananāsu 30cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 9.5
-______________
-Pirkuma kopēja summa: 27.2
-______________
-Pirkuma kopēja summa: 45.55
-------------------------------
-Vārds: -
-Tālrunis: -
-Piegādes adrese: -
-Galda numurs: 19
-Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Coca-Cola |Cena par picu ar piedevam: 8.85
-______________
-Pirkuma kopēja summa: 8.85
-______________
-Pirkuma kopēja summa: 8.85
+Pirkuma kopēja summa: 27.6
+
 ------------------------------
 Vārds: tami
-Tālrunis: 3456
-Piegādes adrese: dc
+Tālrunis: 346785
+Piegādes adrese: dfis n
 Galda numurs: 0
-Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 9.5
-Izvēlētais ēdiens: Margarita 20cm ar Tomātu mērci; Coca-Cola |Cena par picu ar piedevam: 9.35
+Pica ar piedevām: Studentu 30cm ar Tomātu mērcikartupēļi fri; 
+ Cena par picu: 9.5
+Pica ar piedevām: Amerikāņu 20cm ar Tomātu mērciCoca-Cola 
+ Cena par picu: 7.35
 ______________
 Pirkuma kopēja summa: 18.85
+
+------------------------------
+Vārds: ygivsc
+Tālrunis: 2345
+Piegādes adrese: dfkvj
+Galda numurs: 0
+Pica ar piedevām: Margarita 30cm ar Tomātu mērci |kartupēļi fri |Coca-Cola 
+ Cena par picu: 10.85
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci |kartupēļi fri 
+ Cena par picu: 7.5
+______________
+Pirkuma kopēja summa: 20.35
+
+------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 10
+Pica ar piedevām: Amerikāņu 30cm ar Tomātu mērci |Coca-Cola |Sprite 
+ Cena par picu: 10.45
+______________
+Pirkuma kopēja summa: 10.45
+
+------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 3
+Pica ar piedevām: Amerikāņu 30cm ar Ķiploku mērci |Coca-Cola |Sprite 
+ Cena par picu: 10.45€
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci |kartupēļi fri 
+ Cena par picu: 7.5€
+_____________________
+Pirkuma summa: 17.95€
+
+--------------------------------
+Vārds: Tami
+Tālrunis: mat
+Piegādes adrese: 34
+Galda numurs: 0
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+dzērieni: 
+ Cena par picu ar piedevām: 7.5€
+Pica ar piedevām: Margarita 30cm ar Ķiploku mērci 
+Piedevas: kartupēļi fri 
+dzērieni: |Coca-Cola 
+ Cena par picu ar piedevām: 10.85€
+_____________________
+Pirkuma summa: 20.85€
+
+--------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 2
+Pica ar piedevām: Amerikāņu 30cm ar Tomātu mērci 
+Piedevas: kartupēļi fri 
+dzērieni: |Coca-Cola 
+ Cena par picu ar piedevām: 
+10.85€
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+ Cena par picu ar piedevām: 
+7.5€
+_____________________
+Cena par pirkumu: 18.35€
+
+--------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 5
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+ Cena par picu ar piedevām: 7.5€
+
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+dzērieni: |Fanta 
+ Cena par picu ar piedevām: 8.75€
+
+_____________________
+Cena par pirkumu: 16.25€
+
+----------------------------------
+Vārds: 
+Tālrunis: 
+Piegādes adrese: 
+Galda numurs: 0
+Pica ar piedevām: Ananāsu 20cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+dzērieni: |Sprite 
+Cena par picu ar piedevām: 8.6€
+
+Pica ar piedevām: Margarita 50cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+dzērieni: |Fanta |Coca-Cola |Sprite 
+Cena par picu ar piedevām: 17.200000000000003€
+
+_____________________
+Cena par pirkumu: 28.300000000000004€

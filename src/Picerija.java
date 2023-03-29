@@ -1,3 +1,6 @@
+import java.awt.Dimension;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +11,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 
 public class Picerija {
@@ -25,7 +30,7 @@ public class Picerija {
 		String vards="", talrunis="", adrese="";	
 		boolean piegade = false;
 		int gNr=0;
-		int pieg = (JOptionPane.showConfirmDialog(null, "Būs piegāde mājās?", "Piegāde mājās", JOptionPane.YES_NO_OPTION));
+		int pieg = (JOptionPane.showConfirmDialog(null, "Būs piegāde mājās? - 2,50€", "Piegāde mājās", JOptionPane.YES_NO_OPTION));
 		
 		if (pieg==JOptionPane.YES_OPTION){	
 			 vards += (String)JOptionPane.showInputDialog("Vārds");
@@ -57,7 +62,7 @@ public class Picerija {
 }	
 
 	public static void izveidotPicu() {
-		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?   |6€|8€|12€", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
+		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?  |6€(20cm)|8€(30cm)|12€(50cm)", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
 		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
 		 String merce = (String)JOptionPane.showInputDialog(null, "Kāda mērce?", "Mērces", JOptionPane.QUESTION_MESSAGE, null, merces, merces[0]);
 		 int izmCena = Arrays.asList(picasIzmeri).indexOf(picasIzmers);
@@ -77,7 +82,7 @@ public class Picerija {
 	     
 	     Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);     
 	     pici.add(picas);
-	  	if(klienti.get(klienti.size()-1).piegade==true) picas.cena+=2;
+	  	
 	 		
 		
 	 		int kartupeli = JOptionPane.showConfirmDialog(null, "Būs kartupeli fri?  1,50€", "Piedevas", JOptionPane.YES_NO_OPTION); 		
@@ -100,19 +105,19 @@ public class Picerija {
 		 		
 		 		if(fanta.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=1.25;
-		 		    str += "Fanta ";
+		 		    str += "|Fanta ";
 		 		}
 		 		if(cola.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=1.35;
-		 			str += "Coca-Cola ";
+		 			str += "|Coca-Cola ";
 		 		}
 		 		if(sprite.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=1.10;
-		 			str += "Sprite ";
+		 			str += "|Sprite ";
 		 		}
 		 		if(kafija.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=2.00;
-		 			str += "Melnā kafija ";
+		 			str += "|Melnā kafija ";
 		 		}		 		
 		 	}
 		 		
@@ -120,12 +125,12 @@ public class Picerija {
 		        FileWriter fw = new FileWriter("klientuDati.txt", true); 
 		        fw.write(picas.izvadit());
 		        if(kartupeli==JOptionPane.YES_OPTION) {
-		        	fw.write("kartupēļi fri; ");
+		        	fw.write("\nPiedevas: kartupēļi fri ");
 		        }
 		        if(dzer==JOptionPane.YES_OPTION) {	      
-		        	fw.write(str);
+		        	fw.write("\ndzērieni: "+str);
 		        }        
-		        	fw.write("|Cena par picu ar piedevam: "+picas.cena);    
+		        	fw.write("\nCena par picu ar piedevām: "+picas.cena+"€\n");    
 		        fw.close();
 		        JOptionPane.showMessageDialog(null, "Dati saglabāti");
 		    } catch (Exception e) { 
@@ -133,20 +138,38 @@ public class Picerija {
 		    }
 	 		 	
 	}
-	public static void summa() {
+	public static void summa() { 
 		double summa = 0;
+		if(klienti.get(klienti.size()-1).piegade==true) summa += 2.50;
 		for(int i=0; i<pici.size(); i++) {
 			summa += pici.get(i).cena;
-		}
+		}	
 			try {
 				  FileWriter fw = new FileWriter("klientuDati.txt", true);
-				  fw.write("\n______________\nPirkuma kopēja summa: "+summa);
+				  fw.write("\n_____________________\nCena par pirkumu: "+summa+"€");
 				  fw.close();
 				  JOptionPane.showMessageDialog(null, "Dati saglabāti");
 			}catch (Exception e) { 
 		        JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);		
 	}
 }
+	public static void izvadit() {
+		 JTextArea textArea = new JTextArea();
+		    JScrollPane scrollPane = new JScrollPane(textArea);
+		    scrollPane.setPreferredSize(new Dimension(350, 400));
+		 try (BufferedReader br = new BufferedReader(new FileReader("klientuDati.txt"))){
+	            String izvade;
+	            String dati = "";
+	            while ((izvade = br.readLine()) != null) {            	
+	            	dati += izvade+"\n";	            	            	
+	            }    
+	            textArea.append(dati);	 
+	            JOptionPane.showMessageDialog(null, scrollPane);
+	            br.close();
+	        } catch (Exception e) {
+	        	JOptionPane.showMessageDialog(null, "Rādās kļūda apskatot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);        	
+	        }
+	}
 	
 	
 	public static void main(String[] args) {
@@ -177,7 +200,7 @@ public class Picerija {
 				
 				break;
 			case 1:
-				//izvadit();
+				izvadit();
 				break;
 			case 2:
 				JOptionPane.showMessageDialog(null, "Programma apturēta!");

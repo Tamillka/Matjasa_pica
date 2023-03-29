@@ -9,6 +9,6 @@ public class Pica {
 		this.cena = cena;
 	}
 	public String izvadit() {
-	return "\nIzvēlētais ēdiens: "+picasVeids+" "+picasIzmers+" ar "+merce+" mērci; ";	
+	return "\nPica ar piedevām: "+picasVeids+" "+picasIzmers+" ar "+merce+" mērci ";	
 	}
 }
