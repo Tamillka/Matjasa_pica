@@ -17,7 +17,7 @@ public class Picerija {
 	static Klients konts = new Klients(null, null, null, false, 0);
 	static Pica picas = new Pica(null, null, null, 0.0);
 	
-	static String[] picasVeidi = {"Ananāsu - 6€|8€|12€", "Margarita - 6€|8€|12€", "Amerikāņu - 6€|8€|12€", "Mafija - 6€|8€|12€", "Studentu - 6€|8€|12€"};
+	static String[] picasVeidi = {"Ananāsu", "Margarita", "Amerikāņu", "Mafija", "Studentu"};
 	static String[] picasIzmeri = {"20cm", "30cm", "50cm"};
 	static String[] merces = {"Siera", "Tomātu", "Ķiploku"};
 	
@@ -57,7 +57,7 @@ public class Picerija {
 }	
 
 	public static void izveidotPicu() {
-		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
+		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?   |6€|8€|12€", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
 		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
 		 String merce = (String)JOptionPane.showInputDialog(null, "Kāda mērce?", "Mērces", JOptionPane.QUESTION_MESSAGE, null, merces, merces[0]);
 		 int izmCena = Arrays.asList(picasIzmeri).indexOf(picasIzmers);
@@ -77,17 +77,14 @@ public class Picerija {
 	     
 	     Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);     
 	     pici.add(picas);
-	  	if(klienti.get(klienti.size()-1).piegade==true) {
-	 		picas.cena+=1;
+	  	if(klienti.get(klienti.size()-1).piegade==true) picas.cena+=2;
+	 		
 		
-	 		int kartupeli = JOptionPane.showConfirmDialog(null, "Būs kartupeli fri?", "Piedevas", JOptionPane.YES_NO_OPTION); 		
+	 		int kartupeli = JOptionPane.showConfirmDialog(null, "Būs kartupeli fri?  1,50€", "Piedevas", JOptionPane.YES_NO_OPTION); 		
 		 	if(kartupeli==JOptionPane.YES_OPTION) pici.get(pici.size()-1).cena+=1.50; 
 		 	
 		 	int dzer = JOptionPane.showConfirmDialog(null, "Būs dzēriens?", "Piedevas", JOptionPane.YES_NO_OPTION);
 		 	String str = "";
-		 	//String dzeriens;
-		 	//String[]dzerieni = {"Fanta - 1,25€", "Coca-Cola - 1,25€", 
-		 			//"Sprite - 1,25€", "Karamēļu ledus Latte - 1,25€", "Melnā kārsta kafija - 1,25€"};
 		 	if(dzer==JOptionPane.YES_OPTION) {
 		 		JPanel panel = new JPanel();
 		 		JCheckBox fanta = new JCheckBox("Fanta - 1,25€");
@@ -116,14 +113,40 @@ public class Picerija {
 		 		if(kafija.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=2.00;
 		 			str += "Melnā kafija ";
-		 		}
-		 		
+		 		}		 		
 		 	}
 		 		
-	 		
-	 		
-	 	}
+		 	try {
+		        FileWriter fw = new FileWriter("klientuDati.txt", true); 
+		        fw.write(picas.izvadit());
+		        if(kartupeli==JOptionPane.YES_OPTION) {
+		        	fw.write("kartupēļi fri; ");
+		        }
+		        if(dzer==JOptionPane.YES_OPTION) {	      
+		        	fw.write(str);
+		        }        
+		        	fw.write("|Cena par picu ar piedevam: "+picas.cena);    
+		        fw.close();
+		        JOptionPane.showMessageDialog(null, "Dati saglabāti");
+		    } catch (Exception e) { 
+		        JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
+		    }
+	 		 	
 	}
+	public static void summa() {
+		double summa = 0;
+		for(int i=0; i<pici.size(); i++) {
+			summa += pici.get(i).cena;
+		}
+			try {
+				  FileWriter fw = new FileWriter("klientuDati.txt", true);
+				  fw.write("\n______________\nPirkuma kopēja summa: "+summa);
+				  fw.close();
+				  JOptionPane.showMessageDialog(null, "Dati saglabāti");
+			}catch (Exception e) { 
+		        JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);		
+	}
+}
 	
 	
 	public static void main(String[] args) {
@@ -144,7 +167,11 @@ public class Picerija {
 				izIndekss = Arrays.asList(darbibas1).indexOf(izv);
 				switch(izIndekss) {
 				case 0:
-					izveidotPicu();					
+					izveidotPicu();	
+					break;
+				case 1:
+					summa();
+					break;
 				}
 				}while(izIndekss!=1);
 				

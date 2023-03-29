@@ -1,6 +1,63 @@
 
 ------------------------------
-Vārds: tamila
-Tālrunis: 346
-Piegādes adrese: ksfvb
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 12
+Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 7.5
+______________
+Pirkuma kopēja summa: 7.5
+Izvēlētais ēdiens: Margarita 30cm ar Siera mērci; kartupēļi fri; Coca-Cola Sprite |Cena par picu ar piedevam: 11.95
+______________
+Pirkuma kopēja summa: 7.5
+______________
+Pirkuma kopēja summa: 19.45
+______________
+Pirkuma kopēja summa: 7.5
+______________
+Pirkuma kopēja summa: 19.45
+------------------------------
+Vārds: tami
+Tālrunis: 234567
+Piegādes adrese: sdf
 Galda numurs: 0
+Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Fanta Coca-Cola Sprite |Cena par picu ar piedevam: 13.2
+______________
+Pirkuma kopēja summa: 13.2
+Izvēlētais ēdiens: Ananāsu 30cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 11.5
+______________
+Pirkuma kopēja summa: 24.7
+______________
+Pirkuma kopēja summa: 24.7
+------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 17
+Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Coca-Cola |Cena par picu ar piedevam: 8.85
+______________
+Pirkuma kopēja summa: 8.85
+Izvēlētais ēdiens: Ananāsu 30cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 9.5
+______________
+Pirkuma kopēja summa: 27.2
+______________
+Pirkuma kopēja summa: 45.55
+------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 19
+Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; Coca-Cola |Cena par picu ar piedevam: 8.85
+______________
+Pirkuma kopēja summa: 8.85
+______________
+Pirkuma kopēja summa: 8.85
+------------------------------
+Vārds: tami
+Tālrunis: 3456
+Piegādes adrese: dc
+Galda numurs: 0
+Izvēlētais ēdiens: Ananāsu 20cm ar Siera mērci; kartupēļi fri; |Cena par picu ar piedevam: 9.5
+Izvēlētais ēdiens: Margarita 20cm ar Tomātu mērci; Coca-Cola |Cena par picu ar piedevam: 9.35
+______________
+Pirkuma kopēja summa: 18.85
