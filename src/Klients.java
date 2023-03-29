@@ -13,6 +13,6 @@ public class Klients {
 		}
 
 		public String izvadit() {
-			return "\n------------------------------\nVārds: "+vards+"\nTālrunis: "+talrunis+"\nPiegādes adrese: "+adrese;
+			return "\n------------------------------\nVārds: "+vards+"\nTālrunis: "+talrunis+"\nPiegādes adrese: "+adrese+"\nGalda numurs: "+gNr;
 		}
 }

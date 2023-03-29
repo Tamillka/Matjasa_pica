@@ -4,8 +4,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 
 public class Picerija {
@@ -18,7 +20,6 @@ public class Picerija {
 	static String[] picasVeidi = {"Ananāsu - 6€|8€|12€", "Margarita - 6€|8€|12€", "Amerikāņu - 6€|8€|12€", "Mafija - 6€|8€|12€", "Studentu - 6€|8€|12€"};
 	static String[] picasIzmeri = {"20cm", "30cm", "50cm"};
 	static String[] merces = {"Siera", "Tomātu", "Ķiploku"};
-	static String[]dzerieni = {"Fanta - 1,25€", "Coca-Cola - 1,25€", "Sprite - 1,25€", "Karamēļu ledus Latte - 1,25€", "Melnā kārsta kafija - 1,25€"};
 	
 	public static void izveidotKlientu() {
 		String vards="", talrunis="", adrese="";	
@@ -79,7 +80,48 @@ public class Picerija {
 	  	if(klienti.get(klienti.size()-1).piegade==true) {
 	 		picas.cena+=1;
 		
-		
+	 		int kartupeli = JOptionPane.showConfirmDialog(null, "Būs kartupeli fri?", "Piedevas", JOptionPane.YES_NO_OPTION); 		
+		 	if(kartupeli==JOptionPane.YES_OPTION) pici.get(pici.size()-1).cena+=1.50; 
+		 	
+		 	int dzer = JOptionPane.showConfirmDialog(null, "Būs dzēriens?", "Piedevas", JOptionPane.YES_NO_OPTION);
+		 	String str = "";
+		 	//String dzeriens;
+		 	//String[]dzerieni = {"Fanta - 1,25€", "Coca-Cola - 1,25€", 
+		 			//"Sprite - 1,25€", "Karamēļu ledus Latte - 1,25€", "Melnā kārsta kafija - 1,25€"};
+		 	if(dzer==JOptionPane.YES_OPTION) {
+		 		JPanel panel = new JPanel();
+		 		JCheckBox fanta = new JCheckBox("Fanta - 1,25€");
+		 		JCheckBox cola = new JCheckBox("Coca-Cola - 1,35€");
+		 		JCheckBox sprite = new JCheckBox("Sprite - 1,10€");
+		 		JCheckBox kafija = new JCheckBox("Melnā kafija - 2,00€");
+		 		panel.add(fanta);
+		 		panel.add(cola);
+		 		panel.add(sprite);
+		 		panel.add(kafija);
+		 		Object[]opcijas = {"Izvelēties", panel};
+		 		JOptionPane.showOptionDialog(null, "Kādi dzērieni?", "Dzerieni", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcijas, opcijas[0]);
+		 		
+		 		if(fanta.isSelected()) {
+		 			pici.get(pici.size()-1).cena+=1.25;
+		 		    str += "Fanta ";
+		 		}
+		 		if(cola.isSelected()) {
+		 			pici.get(pici.size()-1).cena+=1.35;
+		 			str += "Coca-Cola ";
+		 		}
+		 		if(sprite.isSelected()) {
+		 			pici.get(pici.size()-1).cena+=1.10;
+		 			str += "Sprite ";
+		 		}
+		 		if(kafija.isSelected()) {
+		 			pici.get(pici.size()-1).cena+=2.00;
+		 			str += "Melnā kafija ";
+		 		}
+		 		
+		 	}
+		 		
+	 		
+	 		
 	 	}
 	}
 	
