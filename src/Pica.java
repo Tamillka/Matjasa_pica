@@ -8,7 +8,8 @@ public class Pica {
 		this.merce = merce;
 		this.cena = cena;
 	}
+	
 	public String izvadit() {
-	return "\nPica ar piedevām: "+picasVeids+" "+picasIzmers+" ar "+merce+" mērci ";	
+	return "\nPica: "+picasVeids+" "+picasIzmers+" ar "+merce+" mērci ";	
 	}
 }

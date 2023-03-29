@@ -1,9 +1,8 @@
 public class Klients {
-		String vards, adrese,talrunis;
+		String vards, adrese, talrunis;
 		boolean piegade;
 		int gNr;
 		
-
 		public Klients(String vards, String adrese, String talrunis, boolean piegade, int gNr) {
 			this.vards = vards;
 			this.adrese = adrese;
@@ -13,6 +12,6 @@ public class Klients {
 		}
 
 		public String izvadit() {
-			return "\n\n----------------------------------\nVārds: "+vards+"\nTālrunis: "+talrunis+"\nPiegādes adrese: "+adrese+"\nGalda numurs: "+gNr;
+			return "\n\n----------------------------------\nVārds: "+vards+"\nTālrunis: +371"+talrunis+"\nPiegādes adrese: "+adrese+"\nGalda numurs: "+gNr;
 		}
 }

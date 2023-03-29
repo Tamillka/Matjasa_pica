@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-
 public class Picerija {
 	static ArrayList<Klients> klienti = new ArrayList<>();
 	static ArrayList<Pica> pici = new ArrayList<>();
@@ -41,12 +40,13 @@ public class Picerija {
 		    vards += "-";
 		    talrunis += "-";
 			adrese += "-";		
+			
 			Random rand = new Random();
 			gNr =(char) rand.nextInt(20)+1;
 			ImageIcon icon = new ImageIcon("src/restaurant-table (2).png");
 			JLabel label = new JLabel("Galdiņa numurs!\n"+gNr, icon, JLabel.CENTER);
 			JOptionPane.showMessageDialog(null, label, "Galdīņa numurs", JOptionPane.WARNING_MESSAGE);
-			
+		
 		}  		
 		Klients konts = new Klients(vards, adrese, talrunis, piegade, gNr);	
 		klienti.add(konts);
@@ -62,7 +62,7 @@ public class Picerija {
 }	
 
 	public static void izveidotPicu() {
-		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?  |6€(20cm)|8€(30cm)|12€(50cm)", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
+		 String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica? - 6€(20cm)|8€(30cm)|12€(50cm)", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
 		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
 		 String merce = (String)JOptionPane.showInputDialog(null, "Kāda mērce?", "Mērces", JOptionPane.QUESTION_MESSAGE, null, merces, merces[0]);
 		 int izmCena = Arrays.asList(picasIzmeri).indexOf(picasIzmers);
@@ -83,7 +83,6 @@ public class Picerija {
 	     Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);     
 	     pici.add(picas);
 	  	
-	 		
 		
 	 		int kartupeli = JOptionPane.showConfirmDialog(null, "Būs kartupeli fri?  1,50€", "Piedevas", JOptionPane.YES_NO_OPTION); 		
 		 	if(kartupeli==JOptionPane.YES_OPTION) pici.get(pici.size()-1).cena+=1.50; 
@@ -96,28 +95,34 @@ public class Picerija {
 		 		JCheckBox cola = new JCheckBox("Coca-Cola - 1,35€");
 		 		JCheckBox sprite = new JCheckBox("Sprite - 1,10€");
 		 		JCheckBox kafija = new JCheckBox("Melnā kafija - 2,00€");
+		 		
+		 		ImageIcon icon = new ImageIcon("src/napitki.png");
+		 		JLabel label = new JLabel(icon);
+		 		
 		 		panel.add(fanta);
 		 		panel.add(cola);
 		 		panel.add(sprite);
 		 		panel.add(kafija);
+		 		panel.add(label);
+		 		
 		 		Object[]opcijas = {"Izvelēties", panel};
-		 		JOptionPane.showOptionDialog(null, "Kādi dzērieni?", "Dzerieni", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcijas, opcijas[0]);
+		 		JOptionPane.showOptionDialog(null, "Kādi dzērieni?", "Dzerieni", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcijas, opcijas[1]);
 		 		
 		 		if(fanta.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=1.25;
-		 		    str += "|Fanta ";
+		 		    str += "Fanta ";
 		 		}
 		 		if(cola.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=1.35;
-		 			str += "|Coca-Cola ";
+		 			str += "Coca-Cola ";
 		 		}
 		 		if(sprite.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=1.10;
-		 			str += "|Sprite ";
+		 			str += "Sprite ";
 		 		}
 		 		if(kafija.isSelected()) {
 		 			pici.get(pici.size()-1).cena+=2.00;
-		 			str += "|Melnā kafija ";
+		 			str += "Melnā kafija ";
 		 		}		 		
 		 	}
 		 		
@@ -128,7 +133,7 @@ public class Picerija {
 		        	fw.write("\nPiedevas: kartupēļi fri ");
 		        }
 		        if(dzer==JOptionPane.YES_OPTION) {	      
-		        	fw.write("\ndzērieni: "+str);
+		        	fw.write("\nDzērieni: "+str);
 		        }        
 		        	fw.write("\nCena par picu ar piedevām: "+picas.cena+"€\n");    
 		        fw.close();
@@ -139,20 +144,22 @@ public class Picerija {
 	 		 	
 	}
 	public static void summa() { 
-		double summa = 0;
-		if(klienti.get(klienti.size()-1).piegade==true) summa += 2.50;
+		double summa = 0;		
 		for(int i=0; i<pici.size(); i++) {
 			summa += pici.get(i).cena;
 		}	
 			try {
 				  FileWriter fw = new FileWriter("klientuDati.txt", true);
-				  fw.write("\n_____________________\nCena par pirkumu: "+summa+"€");
+				  if(klienti.get(klienti.size()-1).piegade==true) {
+					  summa += 2.50;
+					  fw.write("Piegāde - 2,50€\n"); }
+				  fw.write("_____________________\nCena par pirkumu: "+summa+"€");
 				  fw.close();
 				  JOptionPane.showMessageDialog(null, "Dati saglabāti");
 			}catch (Exception e) { 
 		        JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);		
-	}
-}
+	   }
+  }
 	public static void izvadit() {
 		 JTextArea textArea = new JTextArea();
 		    JScrollPane scrollPane = new JScrollPane(textArea);
@@ -164,31 +171,30 @@ public class Picerija {
 	            	dati += izvade+"\n";	            	            	
 	            }    
 	            textArea.append(dati);	 
-	            JOptionPane.showMessageDialog(null, scrollPane);
+	            JOptionPane.showMessageDialog(null, scrollPane, "Pasūtījumi", JOptionPane.INFORMATION_MESSAGE);
 	            br.close();
 	        } catch (Exception e) {
 	        	JOptionPane.showMessageDialog(null, "Rādās kļūda apskatot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);        	
-	        }
+	    }
 	}
 	
 	
 	public static void main(String[] args) {
-		String[] darbibas = {"izveidot pasutijumu", "Apskatit sūtījumus", "Aizvert programmu"};
+		String[] darbibas = {"izveidot pasūtījumu", "Apskatīt sūtījumus", "Aizvert programmu"};
 		String[]darbibas1 = {"Pievienot picu", "Aiziet atpakaļ"};
-		String izvele, izv;
-		int izveletaisIndekss, izIndekss;
+		int izvele=0, izv=0;
 		do {
-			izvele = (String)JOptionPane.showInputDialog(null, "Izvelies darbību", "Izvele",
-					JOptionPane.QUESTION_MESSAGE, null, darbibas, darbibas[0]);
-			izveletaisIndekss = Arrays.asList(darbibas).indexOf(izvele);					
-			switch(izveletaisIndekss){
+			 izvele = JOptionPane.showOptionDialog(null, "Izvelies darbību", "Darbības", JOptionPane.DEFAULT_OPTION,
+					JOptionPane.PLAIN_MESSAGE, null, darbibas, darbibas[0]);
+							
+			switch(izvele){
 			case 0:
 				izveidotKlientu();
 				do {
-					izv = (String)JOptionPane.showInputDialog(null, "Izvelies darbību", "Izvele",
-						JOptionPane.QUESTION_MESSAGE, null, darbibas1, darbibas1[0]);
-				izIndekss = Arrays.asList(darbibas1).indexOf(izv);
-				switch(izIndekss) {
+					 izv = JOptionPane.showOptionDialog(null, "Izvelies darbību", "Darbības", JOptionPane.DEFAULT_OPTION,
+						JOptionPane.PLAIN_MESSAGE, null, darbibas1, darbibas1[0]);
+			
+				switch(izv) {
 				case 0:
 					izveidotPicu();	
 					break;
@@ -196,7 +202,7 @@ public class Picerija {
 					summa();
 					break;
 				}
-				}while(izIndekss!=1);
+				}while(izv!=1);
 				
 				break;
 			case 1:
@@ -205,8 +211,6 @@ public class Picerija {
 			case 2:
 				JOptionPane.showMessageDialog(null, "Programma apturēta!");
 			}
-	}while(izveletaisIndekss !=2);
-
-
+	}while(izvele !=2);
 	}
 }
