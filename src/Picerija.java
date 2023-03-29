@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+
 public class Picerija {
 	static ArrayList<Klients> klienti = new ArrayList<>();
 	static ArrayList<Pica> pici = new ArrayList<>();
@@ -58,10 +59,28 @@ public class Picerija {
 		String picasVeids = (String)JOptionPane.showInputDialog(null, "Kāda pica?", "Picas veidi", JOptionPane.QUESTION_MESSAGE, null, picasVeidi, picasVeidi[0]);
 		 String picasIzmers = (String) JOptionPane.showInputDialog(null, "Kāds picas izmērs?", "Picas izmērs", JOptionPane.QUESTION_MESSAGE, null, picasIzmeri, picasIzmeri[0]);
 		 String merce = (String)JOptionPane.showInputDialog(null, "Kāda mērce?", "Mērces", JOptionPane.QUESTION_MESSAGE, null, merces, merces[0]);
-		 
-		 double cena = 0;
-		 Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);
-		 pici.add(picas);
+		 int izmCena = Arrays.asList(picasIzmeri).indexOf(picasIzmers);
+		 switch(izmCena) {
+		 case 0:
+			 izmCena=6;
+		 break;
+		 case 1:
+			 izmCena=8;
+			 break;
+		 case 2:
+			 izmCena=12;
+			 break;
+		 }
+	     double cena = 0;     
+	     cena+=izmCena;		     
+	     
+	     Pica picas = new Pica(picasVeids, picasIzmers, merce, cena);     
+	     pici.add(picas);
+	  	if(klienti.get(klienti.size()-1).piegade==true) {
+	 		picas.cena+=1;
+		
+		
+	 	}
 	}
 	
 	
