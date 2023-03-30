@@ -2,6 +2,7 @@ import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -15,6 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class Picerija {
+	static DecimalFormat df = new DecimalFormat("##.##");
 	static ArrayList<Klients> klienti = new ArrayList<>();
 	static ArrayList<Pica> pici = new ArrayList<>();
 	
@@ -33,7 +35,9 @@ public class Picerija {
 		
 		if (pieg==JOptionPane.YES_OPTION){	
 			 vards += (String)JOptionPane.showInputDialog("Vārds");
-			 talrunis += (String)JOptionPane.showInputDialog("Tālrunis");
+			 do {
+			 talrunis = (String)JOptionPane.showInputDialog("Tālrunis");
+			 }while(talrunis.length()!=8);
 	  adrese = (String)JOptionPane.showInputDialog("Adrese");	
 	 piegade = true;
 		}else if(pieg==JOptionPane.NO_OPTION) {
@@ -55,7 +59,7 @@ public class Picerija {
         FileWriter fw = new FileWriter("klientuDati.txt", true);
         fw.write(konts.izvadit());
         fw.close();
-        JOptionPane.showMessageDialog(null, "Dati saglabāti");
+        JOptionPane.showMessageDialog(null, "Klients saglabāts");
     } catch (Exception e) { 
         JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
     }
@@ -135,16 +139,16 @@ public class Picerija {
 		        if(dzer==JOptionPane.YES_OPTION) {	      
 		        	fw.write("\nDzērieni: "+str);
 		        }        
-		        	fw.write("\nCena par picu ar piedevām: "+picas.cena+"€\n");    
+		        	fw.write("\nCena par picu ar piedevām: "+df.format(picas.cena)+"€\n");    
 		        fw.close();
-		        JOptionPane.showMessageDialog(null, "Dati saglabāti");
+		        JOptionPane.showMessageDialog(null, "Pica pievienota!");
 		    } catch (Exception e) { 
 		        JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
 		    }
 	 		 	
 	}
 	public static void summa() { 
-		double summa = 0;		
+		double summa = 0.0;		
 		for(int i=0; i<pici.size(); i++) {
 			summa += pici.get(i).cena;
 		}	
@@ -153,12 +157,14 @@ public class Picerija {
 				  if(klienti.get(klienti.size()-1).piegade==true) {
 					  summa += 2.50;
 					  fw.write("Piegāde - 2,50€\n"); }
-				  fw.write("_____________________\nCena par pirkumu: "+summa+"€");
+				  fw.write("_____________________\nCena par pirkumu: "+df.format(summa)+"€");
 				  fw.close();
-				  JOptionPane.showMessageDialog(null, "Dati saglabāti");
+				  JOptionPane.showMessageDialog(null, "Pasutijums noformets");
 			}catch (Exception e) { 
 		        JOptionPane.showMessageDialog(null, "Rādās kļūda ierakstot datus!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);		
 	   }
+			klienti.clear();
+			pici.clear();
   }
 	public static void izvadit() {
 		 JTextArea textArea = new JTextArea();
@@ -181,7 +187,7 @@ public class Picerija {
 	
 	public static void main(String[] args) {
 		String[] darbibas = {"izveidot pasūtījumu", "Apskatīt sūtījumus", "Aizvert programmu"};
-		String[]darbibas1 = {"Pievienot picu", "Aiziet atpakaļ"};
+		String[]darbibas1 = {"Pievienot picu", "Pasutit"};
 		int izvele=0, izv=0;
 		do {
 			 izvele = JOptionPane.showOptionDialog(null, "Izvelies darbību", "Darbības", JOptionPane.DEFAULT_OPTION,

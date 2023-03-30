@@ -1,17 +1,48 @@
 
 
+
 ----------------------------------
-Vārds: tamila
-Tālrunis: 23456789
-Piegādes adrese: dfj
+Vārds: dkjfvn
+Tālrunis: 22222222
+Piegādes adrese: bhg
 Galda numurs: 0
-Pica: Studentu 30cm ar Tomātu mērci 
+Pica: Amerikāņu 30cm ar Tomātu mērci 
+Piedevas: kartupēļi fri 
+Dzērieni: Fanta Coca-Cola Sprite 
+Cena par picu ar piedevām: 13.2€
+
+Pica: Margarita 30cm ar Tomātu mērci 
+Piedevas: kartupēļi fri 
+Dzērieni: Fanta Coca-Cola Sprite 
+Cena par picu ar piedevām: 13.2€
+Piegāde - 2,50€
+_____________________
+Cena par pirkumu: 28.9€
+
+----------------------------------
+Vārds: -
+Tālrunis: -
+Piegādes adrese: -
+Galda numurs: 4
+Pica: Ananāsu 20cm ar Siera mērci 
+Cena par picu ar piedevām: 6€
+
+Pica: Ananāsu 30cm ar Siera mērci 
+Piedevas: kartupēļi fri 
+Dzērieni: Sprite 
+Cena par picu ar piedevām: 10.6€
+_____________________
+Cena par pirkumu: 16.6€
+
+----------------------------------
+Vārds: hjsdfbcv
+Tālrunis: 34562345
+Piegādes adrese: dfl;mvg
+Galda numurs: 0
+Pica: Ananāsu 30cm ar Siera mērci 
 Piedevas: kartupēļi fri 
 Dzērieni: Coca-Cola Sprite 
 Cena par picu ar piedevām: 11.95€
-
-Pica: Ananāsu 20cm ar Siera mērci 
-Cena par picu ar piedevām: 6.0€
 Piegāde - 2,50€
 _____________________
-Cena par pirkumu: 20.45€
+Cena par pirkumu: 14.45€
