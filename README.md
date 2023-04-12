@@ -6,5 +6,5 @@ Programma dod iespeju pasutit vairakas picas ar dzerieniem un mercem, var izvele
 
 ### *Veicamo darbu saraksts*
 - [x] Iestatit numura ievades ierobezojumu
-- [ ] Iestatit adreses ievades ierobezojumu
-
+- [x] Iestatit adreses ievades ierobezojumu
+- [x] Iestatit vards uevades ierobezojumu
