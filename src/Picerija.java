@@ -37,7 +37,7 @@ public class Picerija {
 			 vards += (String)JOptionPane.showInputDialog("Vārds");
 			 do {
 			 talrunis = (String)JOptionPane.showInputDialog("Tālrunis");
-			 }while(talrunis.length()!=8);
+			 }while(talrunis.length()!=12 && !talrunis.equals("+371"));
 	  adrese = (String)JOptionPane.showInputDialog("Adrese");	
 	 piegade = true;
 		}else if(pieg==JOptionPane.NO_OPTION) {
