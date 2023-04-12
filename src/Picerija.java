@@ -34,11 +34,15 @@ public class Picerija {
 		int pieg = (JOptionPane.showConfirmDialog(null, "Būs piegāde mājās? - 2,50€", "Piegāde mājās", JOptionPane.YES_NO_OPTION));
 		
 		if (pieg==JOptionPane.YES_OPTION){	
+			do {
 			 vards += (String)JOptionPane.showInputDialog("Vārds");
+			}while(vards.length()<3);
 			 do {
-			 talrunis = (String)JOptionPane.showInputDialog("Tālrunis");
-			 }while(talrunis.length()!=12 && !talrunis.equals("+371"));
+			 talrunis = (String)JOptionPane.showInputDialog("Tālrunis", "+371");
+			 }while(talrunis.length()!=12);
+			 do {
 	  adrese = (String)JOptionPane.showInputDialog("Adrese");	
+			 }while(adrese.length()<10 && !adrese.equals("iela"));
 	 piegade = true;
 		}else if(pieg==JOptionPane.NO_OPTION) {
 		    vards += "-";
